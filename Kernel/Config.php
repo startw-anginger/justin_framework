@@ -15,7 +15,7 @@ class Config
     public function __construct()
     {
         if (file_exists(self::FILENAME)) {
-            $this->config = include_once self::FILENAME;
+            $this->config = include self::FILENAME;
             foreach (self::REQUIREMENTS as $key) {
                 if (!array_key_exists($key, $this->config)) {
                     throw new Error("$key required is not found in the configuration.");
