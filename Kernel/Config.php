@@ -2,9 +2,14 @@
 // Justin PHP Framework
 // (c)2021 SuperSonic(https://randychen.tk)
 
+namespace AbigailExample\Kernel;
+
+use Error;
+use Exception;
+
 class Config
 {
-    private const FILENAME = __DIR__ . "/../config.inc.php";
+    private const FILENAME = __DIR__ . "/../../config.inc.php";
     private const REQUIREMENTS = [
         "DB_DSN",
         "DB_USERNAME",
@@ -22,7 +27,7 @@ class Config
                 }
             }
         } else {
-            throw new Error("Configuration is not found.");
+            throw new Error(sprintf("Configuration(%s) is not found.", self::FILENAME));
         }
     }
 

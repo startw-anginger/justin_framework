@@ -2,13 +2,13 @@
 // Justin PHP Framework
 // (c)2021 SuperSonic(https://randychen.tk)
 
-use JetBrains\PhpStorm\Pure;
+namespace AbigailExample\Models;
 
-require_once __DIR__ . '/ModelInterface.php';
+use JsonSerializable;
 
-class ModelBase implements JsonSerializable
+abstract class ModelBase implements JsonSerializable
 {
-    public function fromArray(array $array): static
+    public function fromArray(array $array): ModelInterface
     {
         foreach ($array as $key => $value) {
             $this->{$key} = $value;
@@ -16,7 +16,6 @@ class ModelBase implements JsonSerializable
         return $this;
     }
 
-    #[Pure]
     public function jsonSerialize(): ?array
     {
         $result = $this->toArray();

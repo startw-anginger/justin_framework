@@ -2,8 +2,9 @@
 // Justin PHP Framework
 // (c)2021 SuperSonic(https://randychen.tk)
 
-require_once __DIR__ . '/Config.php';
-require_once __DIR__ . '/DuplicateResultException.php';
+namespace AbigailExample\Kernel;
+
+use PDO;
 
 class Database
 {
@@ -14,7 +15,8 @@ class Database
         $this->client = new PDO(
             $config->get("DB_DSN"),
             $config->get("DB_USERNAME"),
-            $config->get("DB_PASSWORD")
+            $config->get("DB_PASSWORD"),
+            [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"]
         );
     }
 
