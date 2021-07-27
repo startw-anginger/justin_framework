@@ -4,8 +4,8 @@
 
 namespace AbigailExample\Models;
 
-use JsonSerializable;
 use AbigailExample\Kernel\Database;
+use JsonSerializable;
 
 interface ModelInterface extends JsonSerializable
 {

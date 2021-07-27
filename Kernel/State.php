@@ -8,19 +8,23 @@ class State
 {
     private array $memory;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->memory = [];
     }
 
-    public function get(string $key) {
+    public function get(string $key)
+    {
         return $this->memory[$key] ?? null;
     }
 
-    public function set(string $key, $value) {
+    public function set(string $key, $value)
+    {
         $this->memory[$key] = $value;
     }
 
-    public function del(string $key) {
+    public function del(string $key)
+    {
         unset($this->memory[$key]);
     }
 }
