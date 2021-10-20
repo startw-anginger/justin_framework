@@ -17,7 +17,6 @@ class ModelBase implements JsonSerializable
         return $this;
     }
 
-    #[Pure]
     public function jsonSerialize(): ?array
     {
         $result = $this->toArray();
