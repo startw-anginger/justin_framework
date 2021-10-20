@@ -13,6 +13,7 @@ abstract class ModelBase implements JsonSerializable
         foreach ($array as $key => $value) {
             $this->{$key} = $value;
         }
+        assert($this instanceof ModelInterface);
         return $this;
     }
 
