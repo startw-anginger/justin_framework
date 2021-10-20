@@ -4,6 +4,8 @@
 
 namespace AbigailExample\Kernel;
 
+use InvalidArgumentException;
+
 class Request
 {
     private string $request_uri;
@@ -24,22 +26,13 @@ class Request
         $key = is_array($key) ? $key : [$key];
         $result = array_filter($key, fn($name) => !array_key_exists($name, $data));
         if (empty($result)) return;
-        $response->setStatus(400)->setBody([
-            "status" => 400,
-            "message" => "Bad Request",
-            "reason" => "Missing the argument(s)",
-            "missing" => $result
-        ])->sendJSON(true);
+        throw new InvalidArgumentException();
     }
 
     public static function validData(Response $response, callable $validator, $data): void
     {
         if (!(call_user_func($validator, $data))) {
-            $response->setStatus(400)->setBody([
-                "status" => 400,
-                "message" => "Bad Request",
-                "reason" => "Invalid data"
-            ])->sendJSON(true);
+            throw new InvalidArgumentException();
         }
     }
 
