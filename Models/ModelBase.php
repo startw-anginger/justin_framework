@@ -8,11 +8,12 @@ require_once __DIR__ . '/ModelInterface.php';
 
 class ModelBase implements JsonSerializable
 {
-    public function fromArray(array $array): static
+    public function fromArray(array $array): ModelInterface
     {
         foreach ($array as $key => $value) {
             $this->{$key} = $value;
         }
+        assert($this instanceof ModelInterface);
         return $this;
     }
 
