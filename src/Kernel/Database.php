@@ -4,20 +4,23 @@
 
 namespace AbigailExample\Kernel;
 
-use PDO;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Tools\Setup;
 
 class Database
 {
-    private PDO $client;
+    private EntityManager $entityManager;
 
     public function __construct(Config $config)
     {
-        $this->client = new PDO(
-            $config->get("DB_DSN"),
-            $config->get("DB_USERNAME"),
-            $config->get("DB_PASSWORD"),
-            [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"]
-        );
+        // config
+        $db_config = Setup::createConfiguration();
+
+        // database configuration parameters
+        $conn = array();
+
+        // obtaining the entity manager
+        $this->entityManager = EntityManager::create($conn, $db_config);
     }
 
     // https://www.uuidgenerator.net/dev-corner/php
@@ -36,22 +39,11 @@ class Database
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
     }
 
-    public static function bindParamsFilled(object $stmt, array $data)
+    /**
+     * @return EntityManager
+     */
+    public function getEntityManager(): EntityManager
     {
-        foreach ($data as $key => &$value) {
-            $stmt->bindParam(":$key", $value);
-        }
-    }
-
-    public static function bindParamsSafe(object $stmt, array $data, array $fields)
-    {
-        foreach ($fields as $key) {
-            $stmt->bindParam(":$key", $data[$key]);
-        }
-    }
-
-    public function getClient(): PDO
-    {
-        return $this->client;
+        return $this->entityManager;
     }
 }
