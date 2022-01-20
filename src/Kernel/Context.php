@@ -4,7 +4,7 @@
 // Licensed under the MIT License. (https://ncurl.xyz/s/2ltII6Ang)
 // (c) 2022 Star Inc. (https://starinc.xyz)
 
-namespace AbigailExample\Kernel;
+namespace JustinExample\Kernel;
 
 class Context
 {

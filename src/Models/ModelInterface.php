@@ -4,9 +4,9 @@
 // Licensed under the MIT License. (https://ncurl.xyz/s/2ltII6Ang)
 // (c) 2022 Star Inc. (https://starinc.xyz)
 
-namespace AbigailExample\Models;
+namespace JustinExample\Models;
 
-use AbigailExample\Kernel\Database;
+use JustinExample\Kernel\Database;
 use JsonSerializable;
 
 interface ModelInterface extends JsonSerializable
