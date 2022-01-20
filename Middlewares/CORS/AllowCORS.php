@@ -1,6 +1,8 @@
 <?php
 // Justin PHP Framework
-// (c)2021 SuperSonic(https://randychen.tk)
+// It's a portable framework for PHP 8.0+, powered by open source community.
+// Licensed under the MIT License. (https://ncurl.xyz/s/2ltII6Ang)
+// (c) 2022 Star Inc. (https://starinc.xyz)
 
 require_once __DIR__ . '/../../Controllers/ControllerInterface.php';
 
