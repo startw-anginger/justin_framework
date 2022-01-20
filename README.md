@@ -7,7 +7,7 @@ Simple PHP backend framework
 https://github.com/star-inc/justin_framework/tree/native
 
 
-https://github.com/star-inc/justin_framework/tree/talisa
+https://github.com/star-inc/justin_framework/tree/JustinExample
 
 
 https://github.com/star-inc/justin_framework/tree/abigail
