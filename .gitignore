@@ -1,5 +1,7 @@
-config.inc.php
-composer.lock
-test.php
 vendor/
-.idea/
+composer.lock
+config.inc.php
+
+.DS_Store
+
+rr
