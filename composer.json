@@ -1,7 +1,8 @@
 {
   "name": "starinc/justin_example_full",
-  "type": "project",
+  "description": "Simple PHP backend framework.",
   "license": "MIT",
+  "type": "project",
   "autoload": {
     "psr-4": {
       "JustinExample\\": "src/"
