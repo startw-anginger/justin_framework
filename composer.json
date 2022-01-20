@@ -1,0 +1,19 @@
+{
+  "name": "starinc/justin_example_full",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "JustinExample\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "SuperSonic",
+      "email": "supersonic@livemail.tw"
+    }
+  ],
+  "require": {
+    "ext-pdo": "*"
+  }
+}
